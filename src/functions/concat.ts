@@ -1,5 +1,11 @@
 import {ParsingFunction} from '@bavary/core/src/core/compiler/types';
 
+/**
+ * Concatenates arrays, objects or strings.
+ * @param a string array or object
+ * @param b second value which should be concatenated with a
+ * @param tag Optional target property
+ */
 export const concat = (({setProperty}, a, b, tag): boolean => {
 
     if (typeof tag !== 'undefined' && (typeof tag !== 'string' || !tag)) {

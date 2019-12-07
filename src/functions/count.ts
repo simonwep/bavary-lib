@@ -1,5 +1,10 @@
 import {ParsingFunction} from '@bavary/core/src/core/compiler/types';
 
+/**
+ * Saves the length or size of an array / string into an tag.
+ * @param res String or array
+ * @param tag Target property
+ */
 export const count = (({setProperty}, res, tag): boolean => {
 
     // Validate args
