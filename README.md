@@ -42,7 +42,13 @@ import {
      * Custom functions crafted for @bavary/core.
      * Checkout the available-functions section for more info!
      */
-    functions
+    functions,
+
+    /**
+     * Pass an array of function-names you want to use.
+     * Returns an object with functions.
+     */
+    use
 } from '@bavary/lib';
 ```
 
