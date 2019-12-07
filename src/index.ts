@@ -1,9 +1,7 @@
-import {ParsingFunction} from '@bavary/core/src/core/compiler/types';
-import {ENV_VERSION}     from './env';
-import {concat}          from './functions/concat';
-import {count}           from './functions/count';
-
-export type ParsingFunctionSet = {[key: string]: ParsingFunction};
+import {ENV_VERSION}        from './env';
+import {concat}             from './functions/concat';
+import {count}              from './functions/count';
+import {ParsingFunctionSet} from './types';
 
 /**
  * Current version

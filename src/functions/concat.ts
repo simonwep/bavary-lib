@@ -1,4 +1,4 @@
-import {ParsingFunction} from '@bavary/core/src/core/compiler/types';
+import {ParsingFunction} from '@bavary/core/lib/types/compiler/types';
 
 /**
  * Concatenates arrays, objects or strings.
@@ -6,7 +6,7 @@ import {ParsingFunction} from '@bavary/core/src/core/compiler/types';
  * @param b second value which should be concatenated with a
  * @param tag Optional target property
  */
-export const concat = (({setProperty}, a, b, tag): boolean => {
+export const concat: ParsingFunction = ({setProperty}, a, b, tag): boolean => {
 
     if (typeof tag !== 'undefined' && (typeof tag !== 'string' || !tag)) {
         throw new Error('Tag must be a string and cannot be empty.');
@@ -40,4 +40,4 @@ export const concat = (({setProperty}, a, b, tag): boolean => {
     }
 
     return true;
-}) as ParsingFunction;
+};
