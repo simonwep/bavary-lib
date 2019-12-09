@@ -1,6 +1,7 @@
 import {ENV_VERSION}        from './env';
 import {concat}             from './functions/concat';
 import {count}              from './functions/count';
+import {ignore}             from './functions/ignore';
 import {ParsingFunctionSet} from './types';
 
 /**
@@ -10,6 +11,7 @@ export const version = ENV_VERSION;
 
 // Functions
 export const functions: ParsingFunctionSet = {
+    ignore,
     concat,
     count
 };
