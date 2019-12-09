@@ -10,14 +10,14 @@ import {ParsingFunctionSet} from './types';
 export const version = ENV_VERSION;
 
 // Functions
-export const functions: ParsingFunctionSet = {
+export const functions = Object.freeze({
     ignore,
     concat,
     count
-};
+});
 
 // Util to specify functions you want to use as array
-export const use = (names: Array<string>): ParsingFunctionSet => {
+export const use = (names: Array<keyof typeof functions>): ParsingFunctionSet => {
     const set = {} as ParsingFunctionSet;
 
     for (const name of names) {
