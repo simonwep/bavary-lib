@@ -8,6 +8,9 @@
     <a href="https://travis-ci.org/Simonwep/bavary-lib"><img
        alt="Build Status"
        src="https://img.shields.io/travis/Simonwep/bavary-lib.svg?style=flat-square"></a>
+    <a href='https://coveralls.io/github/Simonwep/bavary-lib?branch=master'><img
+       src='https://img.shields.io/coveralls/github/Simonwep/bavary-lib?style=flat-square'
+       alt='Coverage Status'/></a>
     <a href="https://www.npmjs.com/package/@bavary/lib"><img
        alt="Download count"
        src="https://img.shields.io/npm/dm/@bavary/lib.svg?style=flat-square"></a>
@@ -57,6 +60,7 @@ import {
 
 > Checkout the source if you want to now exactly whats going on in each function!
 
+* [ignore(...values)](src/functions/ignore.ts) _- Does nothing. Can be used to ignore the value of nested groups._
 * [count(value, tag)](src/functions/count.ts) _- Saves the length of `value` (either array or string) into `tag`_
 * [concat(a, b, tag?)](src/functions/concat.ts) _- Concatenates strings, arrays or objects.
 If no tag is specified for objects and arrays the value will be appended to `a` (Via `.push` or `Object.assign`). The `tag` is mandatory for strings._
