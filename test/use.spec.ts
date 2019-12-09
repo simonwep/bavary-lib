@@ -26,7 +26,6 @@ describe('[Util] use(...names)', () => {
     });
 
     it('Should throw an error if function cannot be found', () => {
-
-        expect(() => use(['count', 'baz'])).to.throw();
+        expect(() => use(['count', 'baz' as 'ignore'])).to.throw();
     });
 });
