@@ -1,6 +1,6 @@
 import {compile} from '@bavary/core';
 import {expect}  from 'chai';
-import {concat}  from '../../src/functions/concat';
+import {use}     from '../../src';
 
 describe('[Function] concat(a, b, tag?)', () => {
 
@@ -12,7 +12,7 @@ describe('[Function] concat(a, b, tag?)', () => {
             entry [
                 concat(<num>, <char>, res)
             ]
-        `, {functions: {concat}});
+        `, {functions: use(['concat'])});
 
         expect(parse('123abc')).to.deep.equal({
             res: '123abc'
@@ -27,7 +27,7 @@ describe('[Function] concat(a, b, tag?)', () => {
             entry [
                 concat(<num>, <char>, res)
             ]
-        `, {functions: {concat}});
+        `, {functions: use(['concat'])});
 
         expect(parse('123abc')).to.deep.equal({
             res: ['1', '2', '3', 'a', 'b', 'c']
@@ -43,7 +43,7 @@ describe('[Function] concat(a, b, tag?)', () => {
                 <num#vals>
                 concat(#vals, <char>)
             ]
-        `, {functions: {concat}});
+        `, {functions: use(['concat'])});
 
         expect(parse('123abc')).to.deep.equal({
             vals: ['1', '2', '3', 'a', 'b', 'c']
@@ -60,7 +60,7 @@ describe('[Function] concat(a, b, tag?)', () => {
             entry [
                 concat(<numobj>, <charobj>, res)
             ]
-        `, {functions: {concat}});
+        `, {functions: use(['concat'])});
 
         expect(parse('123abc')).to.deep.equal({
             res: {
@@ -81,7 +81,7 @@ describe('[Function] concat(a, b, tag?)', () => {
                 <numobj#val>
                 concat(#val, <charobj>)
             ]
-        `, {functions: {concat}});
+        `, {functions: use(['concat'])});
 
         expect(parse('123abc')).to.deep.equal({
             val: {
@@ -97,7 +97,7 @@ describe('[Function] concat(a, b, tag?)', () => {
             entry [
                 concat([(0 - 9)], [(a - z)], [])
             ]
-        `, {functions: {concat}})('2a')).to.throw();
+        `, {functions: use(['concat'])})('2a')).to.throw();
     });
 
     it('Should throw an error if string-concatenation is done without a tag', () => {
@@ -106,7 +106,7 @@ describe('[Function] concat(a, b, tag?)', () => {
             entry [
                 concat([(0 - 9)], [(a - z)])
             ]
-        `, {functions: {concat}})('2a')).to.throw();
+        `, {functions: use(['concat'])})('2a')).to.throw();
     });
 
     it('Should throw an error if arguments don\'t match', () => {
@@ -115,7 +115,7 @@ describe('[Function] concat(a, b, tag?)', () => {
             entry [
                 concat([(0 - 9)], [(a - z)]+)
             ]
-        `, {functions: {concat}})('2aaa')).to.throw();
+        `, {functions: use(['concat'])})('2aaa')).to.throw();
     });
 
     it('Should throw an error if arguments are missing', () => {
@@ -124,6 +124,6 @@ describe('[Function] concat(a, b, tag?)', () => {
             entry [
                 concat([(0 - 9)])
             ]
-        `, {functions: {concat}})('2aaa')).to.throw();
+        `, {functions: use(['concat'])})('2aaa')).to.throw();
     });
 });

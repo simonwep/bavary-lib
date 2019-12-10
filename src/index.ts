@@ -2,6 +2,7 @@ import {ENV_VERSION}        from './env';
 import {concat}             from './functions/concat';
 import {count}              from './functions/count';
 import {ignore}             from './functions/ignore';
+import {pick}               from './functions/pick';
 import {ParsingFunctionSet} from './types';
 
 /**
@@ -13,7 +14,8 @@ export const version = ENV_VERSION;
 export const functions = Object.freeze({
     ignore,
     concat,
-    count
+    count,
+    pick
 });
 
 // Util to specify functions you want to use as array

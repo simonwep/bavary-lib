@@ -61,7 +61,8 @@ import {
 > Checkout the source if you want to now exactly whats going on in each function!
 
 * [ignore(...values)](src/functions/ignore.ts) _- Does nothing. Can be used to ignore the value of nested groups._
-* [count(value, tag)](src/functions/count.ts) _- Saves the length of `value` (either array or string) into `tag`_
+* [count(value, tag)](src/functions/count.ts) _- Saves the length of `value` (either array or string) into `tag`._
+* [pick(value, property)](src/functions/pick.ts) _- Extracts `property` from `value` and applies it as current result._
 * [concat(a, b, tag?)](src/functions/concat.ts) _- Concatenates strings, arrays or objects.
 If no tag is specified for objects and arrays the value will be appended to `a` (Via `.push` or `Object.assign`). The `tag` is mandatory for strings._
 

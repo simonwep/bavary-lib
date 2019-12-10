@@ -1,6 +1,6 @@
 import {compile} from '@bavary/core';
 import {expect}  from 'chai';
-import {count}   from '../../src/functions/count';
+import {use}     from '../../src';
 
 describe('[Function] count(val, tag)', () => {
 
@@ -13,7 +13,7 @@ describe('[Function] count(val, tag)', () => {
                 count(<num>, nums)
                 count(<char>, chars)
             ]
-        `, {functions: {count}});
+        `, {functions: use(['count'])});
 
         expect(parse('123456abcdefabcdef')).to.deep.equal({
             nums: 6,
@@ -27,7 +27,7 @@ describe('[Function] count(val, tag)', () => {
             <num> = [<submum#num>]
 
             entry [count(<num>, nums)]
-        `, {functions: {count}});
+        `, {functions: use(['count'])});
 
         expect(() => parse('12354')).to.throw();
     });
@@ -37,7 +37,7 @@ describe('[Function] count(val, tag)', () => {
             <num> = [(0 - 9)]+
 
             entry [count(<num>)]
-        `, {functions: {count}});
+        `, {functions: use(['count'])});
 
         expect(() => parse('12354')).to.throw();
     });
