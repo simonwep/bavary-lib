@@ -55,6 +55,7 @@ import {
 } from '@bavary/lib';
 ```
 
+If you want to use these but have no idea how: checkout the [documentation](https://github.com/Simonwep/bavary/blob/master/docs/config.md#custom-functions) for how function work. You can even make custom ones!
 
 #### Functions
 
