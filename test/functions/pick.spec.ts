@@ -4,6 +4,19 @@ import {use}     from '../../src';
 
 describe('[Function] pick(value, property)', () => {
 
+    it('Should return false if source is null', () => {
+        const parse = compile(`
+            <num> = [(0 - 9)+]
+            <wrapper> = [<num#num>]
+
+            entry [
+                [pick(<wrapper>, num)]? 'A'
+            ]
+        `, {functions: use(['pick'])});
+
+        expect(parse('A')).to.equal('A');
+    });
+
     it('Should pick a value', () => {
         const parse = compile(`
             <num> = [(0 - 9)+]

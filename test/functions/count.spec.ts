@@ -4,6 +4,18 @@ import {use}     from '../../src';
 
 describe('[Function] count(val, tag)', () => {
 
+    it('Should return false if source is null', () => {
+        const parse = compile(`
+            <char> = [(a - c)+]
+
+            entry [
+                count(<char>, chars)
+            ]
+        `, {functions: use(['count'])});
+
+        expect(parse('zzz')).to.equal(null);
+    });
+
     it('Should properly determine the length of arrays and strings', () => {
         const parse = compile(`
             <num> = [(0 - 9)]+

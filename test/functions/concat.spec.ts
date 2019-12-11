@@ -4,6 +4,19 @@ import {use}     from '../../src';
 
 describe('[Function] concat(a, b, tag?)', () => {
 
+    it('Should return false if one source is null', () => {
+        const parse = compile(`
+            <num> = [(0 - 9)+]
+            <char> = [(a - c)+]
+
+            entry [
+                concat(<num>, <char>, res)
+            ]
+        `, {functions: use(['concat'])});
+
+        expect(parse('123zzz')).to.equal(null);
+    });
+
     it('Should concat strings', () => {
         const parse = compile(`
             <num> = [(0 - 9)+]
