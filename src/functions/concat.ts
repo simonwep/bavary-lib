@@ -8,6 +8,10 @@ import {ParsingFunction} from '@bavary/core/lib/types/compiler/types';
  */
 export const concat: ParsingFunction = ({setProperty}, a, b, tag): boolean => {
 
+    if (a === null || b === null) {
+        return false;
+    }
+
     if (typeof tag !== 'undefined' && (typeof tag !== 'string' || !tag)) {
         throw new Error('Tag must be a string and cannot be empty.');
     }

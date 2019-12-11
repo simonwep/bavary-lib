@@ -2,8 +2,12 @@ import {ParsingFunction, ParsingResultObject} from '@bavary/core/lib/types/compi
 
 export const pick: ParsingFunction = ({setString}, obj, toPick): boolean => {
 
+    if (obj === null) {
+        return false;
+    }
+
     // Source needs to be a object
-    if (!obj || typeof obj !== 'object' || Array.isArray(obj)) {
+    if (typeof obj !== 'object' || Array.isArray(obj)) {
         throw new Error('First argument needs to be an object.');
     }
 
