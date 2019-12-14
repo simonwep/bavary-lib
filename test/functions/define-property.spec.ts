@@ -2,7 +2,7 @@ import {compile} from '@bavary/core';
 import {expect}  from 'chai';
 import {use}     from '../../src';
 
-describe('[Function] defineProperty(tag, ..values)', () => {
+describe('[Function] defineProperty(tag, ...values)', () => {
 
     it('Should save a simple value into a property', () => {
         const parse = compile(`

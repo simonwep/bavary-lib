@@ -2,6 +2,7 @@ import {ENV_VERSION}        from './env';
 import {concat}             from './functions/concat';
 import {count}              from './functions/count';
 import {defineProperty}     from './functions/define-property';
+import {deleteProperty}     from './functions/delete-property';
 import {expectEqual}        from './functions/expect-equal';
 import {ignore}             from './functions/ignore';
 import {pick}               from './functions/pick';
@@ -15,6 +16,7 @@ export const version = ENV_VERSION;
 // Functions
 export const functions = Object.freeze({
     defineProperty,
+    deleteProperty,
     expectEqual,
     ignore,
     concat,
