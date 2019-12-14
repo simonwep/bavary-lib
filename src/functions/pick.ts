@@ -1,4 +1,4 @@
-import {ParsingFunction, ParsingResultObject} from '@bavary/core/lib/types/compiler/types';
+import {ParsingFunction} from '@bavary/core/lib/types/compiler/types';
 
 export const pick: ParsingFunction = ({setString}, obj, toPick): boolean => {
 
@@ -13,11 +13,11 @@ export const pick: ParsingFunction = ({setString}, obj, toPick): boolean => {
 
     if (typeof toPick !== 'string') {
         throw new Error('Second argument needs to be a string or identifier.');
-    } else if (typeof (obj as ParsingResultObject)[toPick] !== 'string') {
+    } else if (typeof obj[toPick] !== 'string') {
         throw new Error(`Target property "${toPick}" isn't a string or does not exist.`);
     }
 
     // Copy value to current scope
-    setString((obj as ParsingResultObject)[toPick] as string);
+    setString(obj[toPick] as string);
     return true;
 };
