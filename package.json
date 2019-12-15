@@ -1,6 +1,6 @@
 {
     "name": "@bavary/lib",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "Library for bavary",
     "author": "Simon Reinisch <trash@reinisch.io>",
     "main": "lib/bavary.lib.js",
