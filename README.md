@@ -65,7 +65,7 @@ If you want to use these but have no idea how: checkout the [documentation](http
 * [count(value, tag)](src/functions/count.ts) _- Saves the length of `value` (either array or string) into `tag`._
 * [pick(value, property)](src/functions/pick.ts) _- Extracts `property` from `value` and applies it as current result._
 * [concat(a, b, tag?)](src/functions/concat.ts) _- Concatenates strings, arrays or objects.
-* [expectEqual(msg | 'null', ...values)](src/functions/expect-equal.ts) _- Check whenever all values are equal. Returns false if first argument is `null`, otherwise the string is thrown as error._
+* [expectEqual(msg | 'null', ...values)](src/functions/expect-equal.ts) _- Check whenever all values are equal. Returns false if first argument is `null`, otherwise the string is thrown as error. Returns `false` if at least one value is `null`._
 * [defineProperty(tag, ...values)](src/functions/define-property.ts) _- Saves whatever is passed after the tag as property into the result. If more than one value is passed into it they're wrapped into an array._
 * [deleteProperty(...props)](src/functions/delete-property.ts) _- Deletes properties by their name in the current result._
 If no tag is specified for objects and arrays the value will be appended to `a` (Via `.push` or `Object.assign`). The `tag` is mandatory for strings._

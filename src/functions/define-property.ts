@@ -18,5 +18,5 @@ export const defineProperty: ParsingFunction = ({setProperty}, tag, ...values) =
         setProperty(tag, values.length ? values[0] : null);
     }
 
-    return true;
+    return !values.some(value => value === null);
 };
